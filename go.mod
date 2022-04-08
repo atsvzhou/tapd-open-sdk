@@ -1,4 +1,4 @@
-module tapd-open-sdk
+module github.com/atsvzhou/tapd-open-sdk
 
 go 1.17
 
