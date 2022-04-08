@@ -2,7 +2,7 @@ package tapd
 
 import (
 	"fmt"
-	"tapd-open-sdk/model"
+	"github.com/atsvzhou/tapd-open-sdk/model"
 	"testing"
 )
 

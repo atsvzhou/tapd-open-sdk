@@ -1,8 +1,8 @@
 package tapd
 
 import (
+	"github.com/atsvzhou/tapd-open-sdk/model"
 	"net/http"
-	"tapd-open-sdk/model"
 )
 
 func (c *Client) ListBugs(query *model.ListBugsParams) (*model.ListBugsResponse, *http.Response, error) {

@@ -40,7 +40,7 @@ func NewClient(user, pwd string) *Client {
 func (c *Client) Get(path string, params map[string]string, v interface{}) (*http.Response, error) {
 	c.baseURL.Path = path
 	c.baseURL.RawQuery = c.ParamsToSortQuery(params)
-	fmt.Println("c.baseURL.String()", c.baseURL.String())
+	//fmt.Println("c.baseURL.String()", c.baseURL.String())
 	req := c.NewReq(http.MethodGet, c.baseURL.String())
 	resp, err := c.client.Do(req)
 	if err != nil {

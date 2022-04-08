@@ -3,7 +3,7 @@ package tapd
 import (
 	"encoding/json"
 	"fmt"
-	"tapd-open-sdk/model"
+	"github.com/atsvzhou/tapd-open-sdk/model"
 	"testing"
 )
 
