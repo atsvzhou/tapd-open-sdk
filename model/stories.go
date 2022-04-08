@@ -24,10 +24,10 @@ type ListStoresResponse struct {
 }
 
 type ListStores struct {
-	ID              string      `json:"id"`
+	Id              string      `json:"id"`
 	Name            string      `json:"name"`
 	Description     string      `json:"description"`
-	WorkspaceID     string      `json:"workspace_id"`
+	WorkspaceId     string      `json:"workspace_id"`
 	Creator         string      `json:"creator"`
 	Created         string      `json:"created"`
 	Modified        string      `json:"modified"`
@@ -39,24 +39,24 @@ type ListStores struct {
 	Size            interface{} `json:"size"`
 	Priority        string      `json:"priority"`
 	Developer       string      `json:"developer"`
-	IterationID     string      `json:"iteration_id"`
+	IterationId     string      `json:"iteration_id"`
 	TestFocus       string      `json:"test_focus"`
 	Type            string      `json:"type"`
 	Source          string      `json:"source"`
 	Module          string      `json:"module"`
 	Version         string      `json:"version"`
 	Completed       string      `json:"completed"`
-	CategoryID      string      `json:"category_id"`
+	CategoryId      string      `json:"category_id"`
 	Path            string      `json:"path"`
-	ParentID        string      `json:"parent_id"`
-	ChildrenID      string      `json:"children_id"`
-	AncestorID      string      `json:"ancestor_id"`
+	ParentId        string      `json:"parent_id"`
+	ChildrenId      string      `json:"children_id"`
+	AncestorId      string      `json:"ancestor_id"`
 	BusinessValue   interface{} `json:"business_value"`
 	Effort          string      `json:"effort"`
 	EffortCompleted string      `json:"effort_completed"`
 	Exceed          string      `json:"exceed"`
 	Remain          string      `json:"remain"`
-	ReleaseID       string      `json:"release_id"`
+	ReleaseId       string      `json:"release_id"`
 }
 
 type ListStoresData struct {

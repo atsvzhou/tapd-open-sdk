@@ -22,8 +22,8 @@ type ListReleaseResponse struct {
 }
 
 type ListReleases struct {
-	ID          string `json:"id"`
-	WorkspaceID string `json:"workspace_id"`
+	Id          string `json:"id"`
+	WorkspaceId string `json:"workspace_id"`
 	Name        string `json:"name"`
 	Description string `json:"description"`
 	Startdate   string `json:"startdate"`
@@ -35,5 +35,5 @@ type ListReleases struct {
 }
 
 type ListReleasesData struct {
-	Release ListReleases `json:"Release"`
+	Release ListReleases `json:"release"`
 }

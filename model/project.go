@@ -9,18 +9,18 @@ type ListProjectsResponse struct {
 	Data []ListProjectsData `json:"data"`
 }
 type ListProjectsData struct {
-	Workspace ListProjects `json:"Workspace"`
+	Workspace ListProjects `json:"workspace"`
 }
 type ListProjects struct {
-	ID          string      `json:"id"`
+	Id          string      `json:"id"`
 	Name        string      `json:"name"`
 	PrettyName  string      `json:"pretty_name"`
 	Description interface{} `json:"description"`
 	Status      string      `json:"status"`
-	ParentID    string      `json:"parent_id"`
+	ParentId    string      `json:"parent_id"`
 	Secrecy     string      `json:"secrecy"`
 	Created     string      `json:"created"`
-	CreatorID   string      `json:"creator_id"`
+	CreatorId   string      `json:"creator_id"`
 	Creator     string      `json:"creator"`
 	BeginDate   string      `json:"begin_date"`
 	EndDate     string      `json:"end_date"`

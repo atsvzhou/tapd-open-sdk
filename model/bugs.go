@@ -10,11 +10,11 @@ type ListBugsResponse struct {
 }
 
 type ListBugsData struct {
-	Bug ListBugs `json:"Bug"`
+	Bug ListBugs `json:"bug"`
 }
 
 type ListBugs struct {
-	ID               string      `json:"id"`
+	Id               string      `json:"id"`
 	Title            string      `json:"title"`
 	Description      string      `json:"description"`
 	Priority         string      `json:"priority"`
@@ -43,7 +43,7 @@ type ListBugs struct {
 	Sourcephase      string      `json:"sourcephase"`
 	Te               string      `json:"te"`
 	CurrentOwner     string      `json:"current_owner"`
-	IterationID      string      `json:"iteration_id"`
+	IterationId      string      `json:"iteration_id"`
 	Resolution       string      `json:"resolution"`
 	Source           string      `json:"source"`
 	Originphase      string      `json:"originphase"`
@@ -62,7 +62,7 @@ type ListBugs struct {
 	Feature          interface{} `json:"feature"`
 	Testmode         string      `json:"testmode"`
 	Estimate         interface{} `json:"estimate"`
-	IssueID          interface{} `json:"issue_id"`
+	IssueId          interface{} `json:"issue_id"`
 	CreatedFrom      interface{} `json:"created_from"`
 	InProgressTime   interface{} `json:"in_progress_time"`
 	VerifyTime       interface{} `json:"verify_time"`
@@ -72,5 +72,5 @@ type ListBugs struct {
 	SuspendTime      interface{} `json:"suspend_time"`
 	Due              interface{} `json:"due"`
 	Begin            interface{} `json:"begin"`
-	WorkspaceID      string      `json:"workspace_id"`
+	WorkspaceId      string      `json:"workspace_id"`
 }
