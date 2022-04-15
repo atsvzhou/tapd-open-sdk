@@ -1,12 +1,18 @@
 package model
 
 type ListStoriesParams struct {
-	WorkspaceId int `json:"workspace_id"` //
+	WorkspaceId string `json:"workspace_id"`         //
+	ReleaseId   string `json:"release_id,omitempty"` //发布计划
+	ParentId    string `json:"parent_id,omitempty"`
+	ChildrenId  string `json:"children_id,omitempty"`
+	Status      string `json:"status,omitempty"`       //状态	支持枚举查询
+	IterationId string `json:"iteration_id,omitempty"` //迭代
+	Limit       int    `json:"limit,omitempty"`
+	Page        int    `json:"page,omitempty"`
 	//Id             int    `json:"id"`               //ID	支持多ID查询
 	//Name           string `json:"name"`             //标题	支持模糊匹配
 	//Priority       string `json:"priority"`         //优先级	支持枚举查询
 	//BusinessValue  int    `json:"business_value"`   //业务价值
-	//Status         string `json:"status"`           //状态	支持枚举查询
 	//Version        string `json:"version"`          //版本
 	//Module         string `json:"module"`           //模块
 	//TestFocus      string `json:"test_focus"`       //测试重点

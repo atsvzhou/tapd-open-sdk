@@ -9,7 +9,11 @@ import (
 
 func TestListBugs(t *testing.T) {
 	client := NewClient("", "")
-	params := &model.ListBugsParams{WorkspaceId: 0}
+	params := &model.ListBugsParams{
+		WorkspaceId: "",
+		Page:        1,
+		Limit:       1,
+	}
 
 	listStories, _, err := client.ListBugs(params)
 	if err != nil {

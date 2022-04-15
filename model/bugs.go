@@ -1,7 +1,16 @@
 package model
 
 type ListBugsParams struct {
-	WorkspaceId int `json:"workspace_id"`
+	WorkspaceId   string `json:"workspace_id"`
+	Priority      string `json:"priority,omitempty"`
+	Severity      string `json:"severity,omitempty"`
+	Status        string `json:"status,omitempty"`
+	IterationId   string `json:"iteration_id,omitempty"`
+	VersionReport string `json:"version_report,omitempty"`
+	Order         string `json:"order,omitempty"`
+	Limit         int    `json:"limit,omitempty"`
+	Page          int    `json:"page,omitempty"`
+	Description   string `json:"description,omitempty"`
 }
 
 type ListBugsResponse struct {

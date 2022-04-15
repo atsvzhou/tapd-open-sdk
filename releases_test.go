@@ -10,7 +10,7 @@ import (
 func TestGetReleases(t *testing.T) {
 	client := NewClient("", "")
 	params := &model.ListReleasesParams{
-		WorkspaceId: 0,
+		WorkspaceId: "",
 	}
 
 	getReleases, _, err := client.GetReleases(params)

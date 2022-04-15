@@ -2,7 +2,7 @@ package model
 
 type ListReleasesParams struct {
 	Id          int    `json:"id,omitempty"`
-	WorkspaceId int    `json:"workspace_id,required"`
+	WorkspaceId string `json:"workspace_id,required"`
 	Name        string `json:"name,omitempty"`
 	Description string `json:"description,omitempty"`
 	//Startdate   time.Time `json:"startdate,omitempty"`

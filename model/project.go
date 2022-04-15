@@ -1,7 +1,7 @@
 package model
 
 type ListProjectsParams struct {
-	CompanyId int `json:"company_id"`
+	CompanyId string `json:"company_id"`
 }
 
 type ListProjectsResponse struct {

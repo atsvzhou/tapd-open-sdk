@@ -8,7 +8,7 @@ import (
 
 func TestListProjects(t *testing.T) {
 	client := NewClient("", "")
-	params := &model.ListProjectsParams{CompanyId: 0}
+	params := &model.ListProjectsParams{CompanyId: ""}
 
 	listProjects, _, err := client.ListProjects(params)
 	if err != nil {

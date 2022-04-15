@@ -7,18 +7,18 @@ import (
 	"testing"
 )
 
-func TestListStories(t *testing.T) {
+func TestListIterations(t *testing.T) {
 	client := NewClient("", "")
-	params := &model.ListStoriesParams{
+	params := &model.ListIterationsParams{
 		WorkspaceId: "",
 	}
 
-	listStories, _, err := client.ListStories(params)
+	listIterations, _, err := client.ListIterations(params)
 	if err != nil {
 		t.Error(err)
 	}
-	fmt.Println(len(listStories.Data))
-	content, err := json.Marshal(&listStories)
+	fmt.Println(len(listIterations.Data))
+	content, err := json.Marshal(&listIterations)
 	if err != nil {
 		t.Error(err)
 	}
