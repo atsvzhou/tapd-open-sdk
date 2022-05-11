@@ -11,8 +11,8 @@ func TestListBugs(t *testing.T) {
 	client := NewClient("", "")
 	params := &model.ListBugsParams{
 		WorkspaceId: "",
-		Page:        1,
-		Limit:       1,
+		Page:        2,
+		Limit:       20,
 	}
 
 	listStories, _, err := client.ListBugs(params)

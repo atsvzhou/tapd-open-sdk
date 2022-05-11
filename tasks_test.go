@@ -11,7 +11,6 @@ func TestListTasks(t *testing.T) {
 	client := NewClient("", "")
 	params := &model.ListTasksParams{
 		WorkspaceId: "",
-		StoryId:     "",
 	}
 
 	listTasks, _, err := client.ListTasks(params)

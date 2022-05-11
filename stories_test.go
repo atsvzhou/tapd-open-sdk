@@ -12,7 +12,6 @@ func TestListStories(t *testing.T) {
 	params := &model.ListStoriesParams{
 		WorkspaceId: "",
 	}
-
 	listStories, _, err := client.ListStories(params)
 	if err != nil {
 		t.Error(err)
