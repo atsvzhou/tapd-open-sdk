@@ -12,6 +12,7 @@ type ListTasksParams struct {
 	Order       string `json:"order,omitempty"`
 	Limit       int    `json:"limit,omitempty"`
 	Page        int    `json:"page,omitempty"`
+	Owner       string `json:"owner,omitempty"`
 }
 
 type ListTasksResponse struct {
@@ -33,7 +34,7 @@ type ListTask struct {
 	Created         string      `json:"created"`
 	Modified        string      `json:"modified"`
 	Status          string      `json:"status"`
-	Owner           interface{} `json:"owner"`
+	Owner           string      `json:"owner"`
 	Cc              interface{} `json:"cc"`
 	Begin           interface{} `json:"begin"`
 	Due             interface{} `json:"due"`

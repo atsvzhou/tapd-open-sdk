@@ -1,27 +1,27 @@
 package model
 
 type ListStoriesParams struct {
-	WorkspaceId string `json:"workspace_id"`         //
-	ReleaseId   string `json:"release_id,omitempty"` //发布计划
-	ParentId    string `json:"parent_id,omitempty"`
-	ChildrenId  string `json:"children_id,omitempty"`
-	Status      string `json:"status,omitempty"`       //状态	支持枚举查询
-	IterationId string `json:"iteration_id,omitempty"` //迭代
-	Limit       int    `json:"limit,omitempty"`
-	Page        int    `json:"page,omitempty"`
-	//Id             int    `json:"id"`               //ID	支持多ID查询
-	//Name           string `json:"name"`             //标题	支持模糊匹配
-	//Priority       string `json:"priority"`         //优先级	支持枚举查询
-	//BusinessValue  int    `json:"business_value"`   //业务价值
-	//Version        string `json:"version"`          //版本
-	//Module         string `json:"module"`           //模块
-	//TestFocus      string `json:"test_focus"`       //测试重点
-	//WorkitemTypeId string `json:"workitem_type_id"` //需求类别
-	//Size           int    `json:"size"`             //规模
-	//Owner          string `json:"owner"`            //当前处理人	支持模糊匹配
-	//Cc             string `json:"cc"`               //当前处理人	支持模糊匹配
-	//Creator        string `json:"creator"`          //创建人	支持多人员查询
-	//Developer      string `json:"developer"`        //开发人员
+	WorkspaceId    string `json:"workspace_id"`         //
+	ReleaseId      string `json:"release_id,omitempty"` //发布计划
+	ParentId       string `json:"parent_id,omitempty"`
+	ChildrenId     string `json:"children_id,omitempty"`
+	Status         string `json:"status,omitempty"`       //状态	支持枚举查询
+	IterationId    string `json:"iteration_id,omitempty"` //迭代
+	Limit          int    `json:"limit,omitempty,omitempty"`
+	Page           int    `json:"page,omitempty,omitempty"`
+	Id             string `json:"id,omitempty"`               //ID	支持多ID查询
+	Name           string `json:"name,omitempty"`             //标题	支持模糊匹配
+	Priority       string `json:"priority,omitempty"`         //优先级	支持枚举查询
+	BusinessValue  int    `json:"business_value,omitempty"`   //业务价值
+	Version        string `json:"version,omitempty"`          //版本
+	Module         string `json:"module,omitempty"`           //模块
+	TestFocus      string `json:"test_focus,omitempty"`       //测试重点
+	WorkitemTypeId string `json:"workitem_type_id,omitempty"` //需求类别
+	Size           int    `json:"size,omitempty"`             //规模
+	Owner          string `json:"owner,omitempty"`            //当前处理人	支持模糊匹配
+	Cc             string `json:"cc,omitempty"`               //当前处理人	支持模糊匹配
+	Creator        string `json:"creator,omitempty"`          //创建人	支持多人员查询
+	Developer      string `json:"developer,omitempty"`        //开发人员
 	//
 }
 type ListStoresResponse struct {

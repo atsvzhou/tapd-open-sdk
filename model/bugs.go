@@ -11,6 +11,7 @@ type ListBugsParams struct {
 	Limit         int    `json:"limit,omitempty"`
 	Page          int    `json:"page,omitempty"`
 	Description   string `json:"description,omitempty"`
+	CurrentOwner  string `json:"current_owner,omitempty"`
 }
 
 type ListBugsResponse struct {
