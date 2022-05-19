@@ -68,3 +68,65 @@ type ListStores struct {
 type ListStoresData struct {
 	Story ListStores `json:"story"`
 }
+
+type UpdateStoryParams struct {
+	WorkspaceId string `json:"workspace_id"`
+	Id          string `json:"id"`
+	Name        string `json:"name,omitempty"`
+	Priority    string `json:"priority,omitempty"`
+	Status      string `json:"status,omitempty"`
+	Version     string `json:",omitempty"`
+	Module      string `json:"module,omitempty"`
+	TestFocus   string `json:"test_focus,omitempty"`
+	Owner       string `json:"owner,omitempty"`
+	Cc          string `json:"cc,omitempty"`
+	Developer   string `json:"developer,omitempty"`
+	CurrentUser string `json:"current_user,omitempty"`
+	IterationId string `json:"iteration_id,omitempty"`
+	ReleaseId   string `json:"release_id,omitempty"`
+	Description string `json:"description,omitempty"`
+}
+
+type UpdateStoryResponse struct {
+	BaseResponse
+	Data UpdateStore `json:"data"`
+}
+
+type Story struct {
+	ID              string      `json:"id"`
+	Name            string      `json:"name"`
+	Description     string      `json:"description"`
+	WorkspaceID     string      `json:"workspace_id"`
+	Creator         string      `json:"creator"`
+	Created         string      `json:"created"`
+	Modified        string      `json:"modified"`
+	Status          string      `json:"status"`
+	Owner           string      `json:"owner"`
+	Cc              string      `json:"cc"`
+	Begin           interface{} `json:"begin"`
+	Due             interface{} `json:"due"`
+	Size            string      `json:"size"`
+	Priority        string      `json:"priority"`
+	Developer       string      `json:"developer"`
+	IterationID     string      `json:"iteration_id"`
+	TestFocus       string      `json:"test_focus"`
+	Type            string      `json:"type"`
+	Source          string      `json:"source"`
+	Module          string      `json:"module"`
+	Version         string      `json:"version"`
+	Completed       interface{} `json:"completed"`
+	CategoryID      string      `json:"category_id"`
+	ParentID        string      `json:"parent_id"`
+	ChildrenID      string      `json:"children_id"`
+	AncestorID      string      `json:"ancestor_id"`
+	BusinessValue   string      `json:"business_value"`
+	Effort          string      `json:"effort"`
+	EffortCompleted string      `json:"effort_completed"`
+	Exceed          string      `json:"exceed"`
+	Remain          string      `json:"remain"`
+	ReleaseID       string      `json:"release_id"`
+}
+
+type UpdateStore struct {
+	Story Story `json:"Story"`
+}

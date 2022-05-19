@@ -12,11 +12,6 @@ import (
 	"strings"
 )
 
-//type Methoder interface {
-//	Get(path string, params map[string]string, v interface{}) (*http.Response, error)
-//	Post(path string, body map[string]string, v interface{}) (*http.Response, error)
-//}
-
 type Client struct {
 	apiUser       string
 	apiPassWord   string
@@ -40,8 +35,7 @@ func NewClient(user, pwd string) *Client {
 func (c *Client) Get(path string, params map[string]string, v interface{}) (*http.Response, error) {
 	c.baseURL.Path = path
 	c.baseURL.RawQuery = c.ParamsToSortQuery(params)
-	//fmt.Println("c.baseURL.String()", c.baseURL.String())
-	req := c.NewReq(http.MethodGet, c.baseURL.String())
+	req := c.NewReq(http.MethodGet, c.baseURL.String(), nil)
 	resp, err := c.client.Do(req)
 	if err != nil {
 		return nil, err
@@ -63,18 +57,15 @@ func (c *Client) Get(path string, params map[string]string, v interface{}) (*htt
 
 func (c *Client) Post(path string, body map[string]string, v interface{}) (*http.Response, error) {
 	c.baseURL.Path = path
-
 	p := url.Values{}
-
 	for k, v := range body {
 		p.Set(k, v)
 	}
-
-	resp, err := c.client.PostForm(c.baseURL.String(), p)
+	req := c.NewReq(http.MethodPost, c.baseURL.String(), strings.NewReader(p.Encode()))
+	resp, err := c.client.Do(req)
 	if err != nil {
 		return nil, err
 	}
-
 	if resp.StatusCode != http.StatusOK {
 		return resp, fmt.Errorf("the tapd client received an unhealthy status code: %d, message: %s", resp.StatusCode, resp.Status)
 	}
@@ -86,6 +77,7 @@ func (c *Client) Post(path string, body map[string]string, v interface{}) (*http
 			err = json.NewDecoder(resp.Body).Decode(v)
 		}
 	}
+
 	return resp, err
 }
 
@@ -149,11 +141,11 @@ func (c *Client) SetAuthorization() {
 	c.authorization = "Basic " + base64.StdEncoding.EncodeToString([]byte(str))
 }
 
-func (c *Client) NewReq(method, url string) *http.Request {
+func (c *Client) NewReq(method, url string, body io.Reader) *http.Request {
 	if c.authorization == "" {
 		c.SetAuthorization()
 	}
-	r, _ := http.NewRequest(method, url, nil)
+	r, _ := http.NewRequest(method, url, body)
 	r.Header.Add("Authorization", c.authorization)
 	r.Header.Add("Content-Type", "application/x-www-form-urlencoded")
 	return r

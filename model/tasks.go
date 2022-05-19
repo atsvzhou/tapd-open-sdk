@@ -49,3 +49,49 @@ type ListTask struct {
 	Remain          string      `json:"remain"`
 	Effort          string      `json:"effort"`
 }
+
+type UpdateTaskParams struct {
+	WorkspaceId string `json:"workspace_id"`
+	Id          string `json:"id"`
+	Name        string `json:"name,omitempty"`
+	Priority    string `json:"priority,omitempty"`
+	Status      string `json:"status,omitempty"`
+	Owner       string `json:"owner,omitempty"`
+	Cc          string `json:"cc,omitempty"`
+	CurrentUser string `json:"current_user,omitempty"`
+	IterationId string `json:"iteration_id,omitempty"`
+	Description string `json:"description,omitempty"`
+}
+
+type UpdateTaskResponse struct {
+	BaseResponse
+	Data UpdateTask `json:"data"`
+}
+
+type Task struct {
+	ID              string      `json:"id"`
+	Name            string      `json:"name"`
+	Description     string      `json:"description"`
+	WorkspaceID     string      `json:"workspace_id"`
+	Creator         string      `json:"creator"`
+	Created         string      `json:"created"`
+	Modified        string      `json:"modified"`
+	Status          string      `json:"status"`
+	Owner           string      `json:"owner"`
+	Cc              string      `json:"cc"`
+	Begin           interface{} `json:"begin"`
+	Due             interface{} `json:"due"`
+	StoryID         string      `json:"story_id"`
+	IterationID     string      `json:"iteration_id"`
+	Priority        string      `json:"priority"`
+	Progress        string      `json:"progress"`
+	Completed       string      `json:"completed"`
+	EffortCompleted string      `json:"effort_completed"`
+	Exceed          string      `json:"exceed"`
+	Remain          string      `json:"remain"`
+	Effort          string      `json:"effort"`
+}
+
+type UpdateTask struct {
+	Task Task `json:"Task"`
+}

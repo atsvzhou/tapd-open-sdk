@@ -14,12 +14,34 @@ func TestListBugs(t *testing.T) {
 		//CurrentOwner: "",
 	}
 
-	listStories, _, err := client.ListBugs(params)
+	listBugs, _, err := client.ListBugs(params)
 	if err != nil {
 		t.Error(err)
 	}
-	fmt.Println(len(listStories.Data))
-	content, err := json.Marshal(&listStories)
+	fmt.Println(len(listBugs.Data))
+	content, err := json.Marshal(&listBugs)
+	if err != nil {
+		t.Error(err)
+	}
+	fmt.Println(string(content))
+
+}
+
+func TestUpdateBugs(t *testing.T) {
+	client := NewClient("", "")
+	params := &model.UpdateBugsParams{
+		WorkspaceId: "",
+		Title:       "testwer11",
+		Id:          "",
+		//Status:      "reopened",
+
+	}
+
+	data, _, err := client.UpdateBug(params)
+	if err != nil {
+		t.Error(err)
+	}
+	content, err := json.Marshal(&data)
 	if err != nil {
 		t.Error(err)
 	}
