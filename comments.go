@@ -17,13 +17,13 @@ func (c *Client) ListComments(query *model.ListCommentsParams) (*model.ListComme
 	return res, resp, err
 }
 
-func (c *Client) UpdateComment(query *model.UpdateCommentParams) (*model.UpdateCommentsResponse, *http.Response, error) {
+func (c *Client) AddComment(query *model.AddCommentParams) (*model.AddCommentsResponse, *http.Response, error) {
 	data, err := c.HandleParams(query)
 	if err != nil {
 		return nil, nil, err
 	}
 
-	var res *model.UpdateCommentsResponse
+	var res *model.AddCommentsResponse
 	resp, err := c.Post("/comments", data, &res)
 
 	return res, resp, err

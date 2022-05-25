@@ -30,7 +30,7 @@ func TestListComments(t *testing.T) {
 
 func TestUpdateComment(t *testing.T) {
 	client := NewClient("", "")
-	params := &model.UpdateCommentParams{
+	params := &model.AddCommentParams{
 		WorkspaceId: "",
 		Description: "",
 		Author:      "",
@@ -38,7 +38,7 @@ func TestUpdateComment(t *testing.T) {
 		EntryId:     "",
 	}
 
-	updateComment, _, err := client.UpdateComment(params)
+	updateComment, _, err := client.AddComment(params)
 	if err != nil {
 		t.Error(err)
 	}

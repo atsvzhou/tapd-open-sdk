@@ -33,7 +33,7 @@ type Comment struct {
 	WorkspaceID string `json:"workspace_id"`
 }
 
-type UpdateCommentParams struct {
+type AddCommentParams struct {
 	WorkspaceId string `json:"workspace_id"`
 	Description string `json:"description"`
 	Author      string `json:"author"`
@@ -41,7 +41,7 @@ type UpdateCommentParams struct {
 	EntryId     string `json:"entry_id"`
 }
 
-type UpdateCommentsResponse struct {
+type AddCommentsResponse struct {
 	BaseResponse
 	Data CommentsData `json:"data"`
 }
