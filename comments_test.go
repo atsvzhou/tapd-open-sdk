@@ -32,7 +32,7 @@ func TestUpdateComment(t *testing.T) {
 	client := NewClient("", "")
 	params := &model.UpdateCommentParams{
 		WorkspaceId: "",
-		Description: "这是另外一条测试评论",
+		Description: "",
 		Author:      "",
 		EntryType:   "bug",
 		EntryId:     "",
