@@ -2,6 +2,7 @@ package model
 
 type ListBugsParams struct {
 	WorkspaceId   string `json:"workspace_id"`
+	ReleaseId     string `json:"release_id,omitempty"` //发布计划
 	Priority      string `json:"priority,omitempty"`
 	Severity      string `json:"severity,omitempty"`
 	Status        string `json:"status,omitempty"`
